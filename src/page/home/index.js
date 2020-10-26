@@ -9,7 +9,7 @@ const Home = () => {
   const [countriesData, setCountriesData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [countriesPerPage] = useState(10);
 
   const getData = async () => {
     try {
@@ -26,11 +26,11 @@ const Home = () => {
     getData();
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const indexOfLastCountry = currentPage * countriesPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries =
     countriesData.data &&
-    countriesData.data.slice(indexOfFirstPost, indexOfLastPost);
+    countriesData.data.slice(indexOfFirstCountry, indexOfLastCountry);
   console.log("diff", currentCountries);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -48,8 +48,8 @@ const Home = () => {
           <Countries countriesData={currentCountries} loading={loading} />
         </div>
         <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={
+          countriesPerPage={countriesPerPage}
+          totalCountries={
             countriesData && countriesData.data && countriesData.data.length
           }
           paginate={paginate}
