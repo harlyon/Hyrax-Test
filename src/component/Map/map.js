@@ -1,17 +1,13 @@
 import React from "react";
-import {
-  GoogleMapProvider,
-  MapBox,
-  InfoWindow,
-} from "@googlemap-react/core";
+import { GoogleMapProvider, MapBox, InfoWindow } from "@googlemap-react/core";
+import { GOOGLE_API } from "../../services/api";
 
 export const Map = (props) => {
-
   return (
     <div className="d-flex container map">
       <GoogleMapProvider>
         <MapBox
-          apiKey="AIzaSyC4Z5Qz97EWcoCczNn2IcYvaYG0L9pe6Rk"
+          apiKey={GOOGLE_API}
           opts={{
             center: { lat: props.lat, lng: props.long },
             zoom: 6,

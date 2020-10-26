@@ -17,10 +17,7 @@ const Search = () => {
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <input
-        type="submit"
-        value="SEARCH"
-      />
+      <input type="submit" value="SEARCH" />
     </form>
   );
 };
