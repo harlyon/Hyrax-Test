@@ -39,22 +39,16 @@ const Home = () => {
 
   return (
     <div>
-      <div className="filter-container">
-        <Search />
+      <div>
+        <Countries countriesData={currentCountries} loading={loading} />
       </div>
-
-      <div className="home-page-main">
-        <div>
-          <Countries countriesData={currentCountries} loading={loading} />
-        </div>
-        <Pagination
-          countriesPerPage={countriesPerPage}
-          totalCountries={
-            countriesData && countriesData.data && countriesData.data.length
-          }
-          paginate={paginate}
-        />
-      </div>
+      <Pagination
+        countriesPerPage={countriesPerPage}
+        totalCountries={
+          countriesData && countriesData.data && countriesData.data.length
+        }
+        paginate={paginate}
+      />
     </div>
   );
 };
