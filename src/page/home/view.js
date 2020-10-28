@@ -13,7 +13,6 @@ const HomePageView = (props) => {
       setCountry(result.data);
     });
   }, [id]);
-  console.log("country", country);
 
   const goBack = () => {
     props.history.push("/");

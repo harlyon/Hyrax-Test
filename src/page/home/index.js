@@ -16,7 +16,6 @@ const Home = () => {
       const response = await axios.get(COUNTRIES_API);
       setCountriesData(response.data);
       setLoading(false);
-      console.log(response.data);
     } catch (err) {
       console.error(err);
     }
@@ -31,11 +30,8 @@ const Home = () => {
   const currentCountries =
     countriesData.data &&
     countriesData.data.slice(indexOfFirstCountry, indexOfLastCountry);
-  console.log("diff", currentCountries);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  console.log(countriesData);
 
   return (
     <div>
